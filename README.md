@@ -1,4 +1,4 @@
-# Flask Gallery by James Peters
+# Flask Gallery
 ###### The easiest way to dynamically load images into your flask web application 
 ###### https://flaskgallery.com/
 
