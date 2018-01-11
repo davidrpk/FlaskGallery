@@ -1,0 +1,17 @@
+awscli==1.11.123
+base58==0.2.4
+boto3==1.4.4
+botocore==1.5.40
+Flask==0.12.2
+hjson==2.0.7
+itsdangerous==0.24
+Jinja2==2.9.6
+passlib
+requests==2.18.1
+s3transfer==0.1.10
+troposphere==1.9.4
+Unidecode==0.4.21
+urllib3==1.21.1
+Werkzeug==0.12
+wsgi-request-logger==0.4.6
+zappa==0.43.1

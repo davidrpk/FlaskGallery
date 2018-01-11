@@ -1,0 +1,12 @@
+[
+  {
+    "objectID": "AA01",
+    "url": "https://s3-ap-southeast-2.amazonaws.com/zappa-flowers/example.jpg",
+    "thumb": "https://s3-ap-southeast-2.amazonaws.com/zappa-flowers/example.jpg",
+    "title": "Scale Image",
+    "desc": "Fine art print are Premium C type photographic prints on archive premium matte paper.",
+    "printsize": "1000 x 1300 Print $1100",
+    "framedsize": "1060 x 1360 Framed $1850",
+    "artist": "Di Craig"
+  }
+]
