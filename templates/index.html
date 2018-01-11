@@ -15,10 +15,9 @@
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/device-mockups.min.css')}}">
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="{{url_for('static', filename='font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='font-awesome/css/simple-line-icons.css')}}">
     <!-- Custom styles for this template -->
     <link href="{{url_for('static', filename='css/flaskgallery.css')}}" rel="stylesheet">
 
@@ -183,12 +182,9 @@
       <div class="container" style="padding-top:50px;">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <p class="text-muted">
-              <a href="mailto:diana@minnidesign.com" style="color:#868e96"><i class="pad-right fa fa-envelope-o"></i>diana@minnidesign.com</a>
-            </p>
-            <p class="text-muted">
-              <a href="tel:+64212520949" style="color:#868e96"><i class="pad-right fa fa-phone"></i>+64 21 629 367</a>
-            </p>
+            <h6 class="text-muted">
+              Donate <i class="fa fa-bitcoin"></i> 1CUz6mRsZTp3cK55bhQF5kJiUtBWqjB9ML
+            </h6>
           </div>
         </div>
         <br><br>
@@ -196,18 +192,18 @@
           <div class="col-lg-12">
             <ul class="list-inline list-social">
               <li class="list-inline-item social-twitter">
-                <a href="https://www.instagram.com/minnidesignart/">
-                  <i class="fa fa-instagram"></i>
+                <a href="https://www.twitter.com/JamesPeters_NZ">
+                  <i class="fa fa-twitter"></i>
                 </a>
               </li>
-              <li class="list-inline-item social-facebook">
-                <a href="https://www.facebook.com/minni_design">
-                  <i class="fa fa-facebook"></i>
+              <li class="list-inline-item social-github">
+                <a href="https://github.com/JimiPedros/FlaskGallery#fork-destination-box">
+                  <i class="fa fa-code-fork"></i>
                 </a>
               </li>
               <li class="list-inline-item social-google-plus">
-                <a href="https://www.pintrest.com/minni_design">
-                  <i class="fa fa-pinterest"></i>
+                <a href="mailto:jamescpeters@outlook.com">
+                  <i class="fa fa-envelope-o"></i>
                 </a>
               </li>
             </ul>
@@ -218,90 +214,13 @@
 
     <footer>
       <div class="container">
-        <p>&copy; 2017 Flowers From My Mothers Garden. All images Copyright Minni Design</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="#privacyModal" class="text-muted text-left" data-toggle="modal" data-target="#privacyModal">Privacy</a><!-- Popup modal -->
-          </li>
-          <li class="list-inline-item">
-            <a href="#termsModal" class="text-muted text-left" data-toggle="modal" data-target="#termsModal">Terms</a><!-- Popup modal -->
-          </li>
-          <li class="list-inline-item">
-            <a href="#faqModal" class="text-muted text-left" data-toggle="modal" data-target="#faqModal">FAQ</a><!-- Popup modal -->
-          </li>
-        </ul>
+        <p>&copy; 2018 Flask Gallery by James Peters</p>
       </div>
     </footer>
 
-    <!-- Modal Privacy -->
-    <div id="privacyModal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="max-width:55%;min-height:50%;">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Privacy Statement</h4>
-          </div>
-          <div class="modal-body">
-            <p class="text-muted">Customers information is secure with Minni Design.<br><br>International Customers please purchase through Pay Pal.<br><br>Customers within New Zealand please default Diana personally to arrange payment.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Terms Privacy -->
-    <div id="termsModal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="max-width:55%;min-height:50%;">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Terms and Conditions</h4>
-          </div>
-          <div class="modal-body">
-            <p class="text-muted">All images are property beloning to Diana Craig.<br><br>Copyright infrigement will lead to prosecution.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQ Privacy -->
-    <div id="faqModal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="max-width:55%;min-height:50%;">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Frequently Asked Questions</h4>
-          </div>
-          <div class="modal-body">
-            <ol>
-              <li class="text-muted">Are all sales final?<br><strong>A.</strong>Yes, all sales are final.</li>
-              <br>
-              <li class="text-muted">Does Minni Design ship internationally?<br><strong>A.</strong>Yes, Minni Design ships internationally. The only exception is I cannot ship framed prints internationally due to the size of each print.</li>
-              <br>
-              <li class="text-muted">How to I purchase something if I live in New Zealand?<br><strong>A.</strong>Please default Diana persoanlly to arrange shipping/pickup and the method of payment. Diana accepts cash and bank transfers from New Zealand Customers.</li>
-              <br>
-              <li class="text-muted">Who developed this website?<br><strong>A.</strong>Minnidesign.com was developed by <a href="https://jamespeters.cc" style=color:#3b5998;>James Peters</a>, you can get in default with him at <a href="mailto:jamescpeters@outlook.com" style=color:#3b5998;>jamescpeters@outlook.com</a>.</li>
-            </ol>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Bootstrap core JavaScript -->
     <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
     <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script>
 
     <!-- Custom scripts for this template -->
     <script src="{{url_for('static', filename='js/new-age.min.js')}}"></script>
