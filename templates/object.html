@@ -2,27 +2,13 @@
 <html lang="en">
 
   <head>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109339814-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-109339814-1');
-    </script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Discover breathtaking flower photography by Diana Craig for Minni Design. Enjoy the collection of limited edition fine art photography printed on Archival Paper for a quality and high resolution.">
-    <meta name="author" content="Diana Craig">
-    <meta name="keywords" content="minni, design, Fine art photography, Flower Photography, minni design, Harveycraig.com, fine art, New Zealand, Auckland, photographic prints, images, archival paper, limited edition, floral, flower prints, flower images, flower art, floral prints, floral art, roses, vintage , spring, tulips, blue bells, magnolia, sweet pea, blossoms, bunches, floral art, peonies,  field flowers. white vases, vintage vases,  cream vases, bunches, bouquet, wild flowers, crown lynn, beswick, limited edition prints, flowers in white vase, Ranunculus, Wisteria, Anenomie, Alstrameria">
-    <meta name="robots" content="all">
-    <meta name="googlebot" content="all">
-    <meta name="google-site-verification" content="DwEX6RgxWoIaZHlqBBDPsWmGeQqN7vFORDCHYBd9ffA" />
+    <meta name="description" content="Flask Gallery Developed by James Peters in 2018. Follow me on Twitter @JamesPeters_NZ">
+    <meta name="author" content="James Peters">
+    <meta name="keywords" content="Flask, Gallery, Photos, Photo-gallery">
 
-    <title>{{photo.title}} -  Minni Design</title>
+    <title>Flask Gallery - Developed by James Peters</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
@@ -38,49 +24,28 @@
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/device-mockups.min.css')}}">
     <!-- Custom styles for this template -->
-    <link href="{{url_for('static', filename='css/new-age.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/flaskgallery.css')}}" rel="stylesheet">
 
   </head>
 
   <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav2">
+  <nav class="navbar" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="/" style="color:black;"><i class="pad-right fa fa-arrow-left"></i>Return To Gallery</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/about">ABOUT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/#contact">CONTACT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="https://facebook.com/minnidesignart"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="https://www.instagram.com/minni_design/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-          </li>
-        </ul>
-      </div>
+      <a class="navbar-brand" href="/"><i class="pad-right fa fa-arrow-left"></i>Return To Gallery</a>
     </div>
   </nav>
-  <section class="contact">
+
+  <section class="default" style="min-height:95vh;">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-6 col-md-12 mb-4 my-auto" style="padding-bottom:60px;">
           <div class="card">
             <img class="card-img-top" src="{{photo.url}}" style="box-shadow: 1px 10px 40px #888888;border:17px solid white;">
           </div>
-          <br><br>
-          <a data-pin-do="buttonPin" data-pin-count="beside" data-pin-tall="true" href="https://www.pinterest.com/pin/create/button/?url={{photo.thumb}}&media={{photo.thumb}}&description={{photo.title}} - https://minnidesign.com"></a>
         </div>
+
         <div class="col-lg-6 my-auto">
           <div class="container-fluid">
             <div class="row">
@@ -89,44 +54,22 @@
                   <h2>{{photo.title}}</h2>
                   <hr>
                 </div>
-                <div class="feature-item object-desc">
+                <div class="feature-item object-desc text-center ">
                   <p class="text-muted">{{photo.desc}}</p>
                   <br>
                   <br>
                   <p class="text-muted">{{photo.printsize}}</p>
                   <p class="text-muted">{{photo.framedsize}}</p>
                   <br>
-                  <p class="text-muted">{{photo.printprice}}</p>
-                  <p class="text-muted">{{photo.framedprice}}</p>
-                  <br>
-                  <p class="text-muted">Outside New Zealand delivery is print only.<br> Freight charges apply.<br><br>Orders within New Zealand please contact diana@minnidesign.com or 021 629367</p>
-                  <br><br>
-
+                  <p><a href="#photoModal" class="text-muted  text-center " data-toggle="modal" data-target="#photoModal"><strong style="font-size:14px;">View Larger</strong></a></p>
                 </div>
-                    <p><a href="#photoModal" class="text-muted text-left" data-toggle="modal" data-target="#photoModal"><strong style="font-size:14px;">View Larger</strong></a></p>
               </div>
             </div>
           </div>
-          {% if photo.objectID != "SSS1" and photo.objectID != "SSS2" %}
-          <div class="row object-nav">
-            <div class="col-sm-12">
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="{{photo.paypalID}}">
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                <br>
-                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-              </form>
-            </div>
-          </div>
-          {% else %}
-          {% endif %}
         </div>
-      </div>
-    </div>
 
-
-
+      </div><!-- end row -->
+    </div><!-- end container -->
 
     <!-- Modal Enlarged Photo -->
     <div id="photoModal" class="modal fade" role="dialog">
@@ -158,7 +101,7 @@
           </div>
           <div class="modal-body">
             <p class="text-muted">{{photo.desc}}</p>
-            <p class="text-muted">Contact Diana Craig at minnidesign.com</p>
+            <p class="text-muted">default Diana Craig at minnidesign.com</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -195,7 +138,7 @@
               <h4 class="modal-title">Privacy Statement</h4>
             </div>
             <div class="modal-body">
-              <p class="text-muted">Customers information is secure with Minni Design.<br><br>International Customers please purchase through Pay Pal.<br><br>Customers within New Zealand please contact Diana personally to arrange payment.</p>
+              <p class="text-muted">Customers information is secure with Minni Design.<br><br>International Customers please purchase through Pay Pal.<br><br>Customers within New Zealand please default Diana personally to arrange payment.</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -236,9 +179,9 @@
                 <br>
                 <li class="text-muted">Does Minni Design ship internationally?<br><strong>A.</strong>Yes, Minni Design ships internationally. The only exception is I cannot ship framed prints internationally due to the size of each print.</li>
                 <br>
-                <li class="text-muted">How to I purchase something if I live in New Zealand?<br><strong>A.</strong>Please contact Diana persoanlly to arrange shipping/pickup and the method of payment. Diana accepts cash and bank transfers from New Zealand Customers.</li>
+                <li class="text-muted">How to I purchase something if I live in New Zealand?<br><strong>A.</strong>Please default Diana persoanlly to arrange shipping/pickup and the method of payment. Diana accepts cash and bank transfers from New Zealand Customers.</li>
                 <br>
-                <li class="text-muted">Who developed this website?<br><strong>A.</strong>Minnidesign.com was developed by <a href="https://jamespeters.cc" style=color:#3b5998;>James Peters</a>, you can get in contact with him at <a href="mailto:jamescpeters@outlook.com" style=color:#3b5998;>jamescpeters@outlook.com</a>.</li>
+                <li class="text-muted">Who developed this website?<br><strong>A.</strong>Minnidesign.com was developed by <a href="https://jamespeters.cc" style=color:#3b5998;>James Peters</a>, you can get in default with him at <a href="mailto:jamescpeters@outlook.com" style=color:#3b5998;>jamescpeters@outlook.com</a>.</li>
               </ol>
             </div>
             <div class="modal-footer">

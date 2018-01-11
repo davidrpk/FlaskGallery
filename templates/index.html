@@ -14,10 +14,8 @@
     <link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Homemade+Apple" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/device-mockups.min.css')}}">
@@ -52,16 +50,18 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="padding-top:50px;">
       <div class="row">
-        <div class="col-lg-6 col-md-12 sm-12">
-          <h5></h5>
+        <div class="col-lg-12 col-md-12 sm-12">
+          <h5>Welcome to Flask Gallery (MIT License). This framework has been developed to make uploading new photos as easy as possible without comprimising the design of the website.</h5>
+          <br>
+          <h5>Store the data for your photos in the JSON file <code>'../data/data.json'</code></h5>
+          <br>
+          <h5>The best part about loading images dynamically is they are still responsive, all you need to do is define the column (width) for all photos to take. In the gallery example below, we list smaller size thumbnail images in the gallery and render the full size image in the dynamically rendered webpage.</h5>
+          <br>
+          <h5>You can view or fork the source code on <a href="https://github.com/JimiPedros/FlaskGallery" style="color:#3535b2">Github.</a></h5>
+          <br>
         </div>
-
-        <div class="col-lg-6 col-md-12 sm-12">
-          <code></code>
-        </div>
-
       </div><!-- end card -->
     </div>
   </section>
@@ -105,31 +105,40 @@
       <div class="row text-left">
         <div class="col-lg-6 col-md-12 sm-12">
           <ul style="list-style-type: none;">
-            <li><h5>The 'read_photos()' function in our app file reads the data from this JSON file and passes it to the webpage requested.</h5></li>
+            <li>
+              <h5>The 'read_photos()' function in our app file reads the data from this JSON file and passes it to the webpage requested.</h5></li>
             <br>
-            <li><h5>You can access this information using for each photo by using a for loop in Jinja.</h5></li>
+            <li>
+              <h5>You can access this information using for each photo by using a for loop in Jinja.</h5></li>
           </ul>
         </div>
 
         <div class="col-lg-6 col-md-12 sm-12">
 
           <pre><code>
-            {  % for photo in photos %  }
-              &lt;img src="{ { photo.thumb } }" /&gt;
-              &lt;h4>{ {photo.title} }&lt;/h4&gt;
-              &lt;p>{ {photo.year} }&lt;/p&gt;
-            {  % endfor %  }
-          </code></pre>
+                &#123;% for photo in photos %&#125;
+                  &lt;img src="&#123;{photo.thumb}&#125;" /&gt;
+                  &lt;h4>&#123;{photo.title}&#125;&lt;/h4&gt;
+                  &lt;p>&#123;{photo.year}&#125;&lt;/p&gt;
+                &#123;% endfor %&#125;
+              </code></pre>
         </div>
 
       </div><!-- end card -->
     </div><!-- end container -->
-  </section>
 
+  </section>
 
 
   <section class="default" id="gallery">
     <div class="container">
+      <div class="section-heading text-center">
+        <h3>Example Gallery</h3>
+        <hr>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:50px;">
       <div class="row">
 
         {% for photo in photos %}
@@ -140,7 +149,7 @@
 
             <a href="/collection/{{photo.objectID}}" class="card-view">
             <!-- click on this image and flask will dynamically route page -->
-              <img class="card-img-top" src="{{photo.thumb}}" style="border: 2px solid lightgray;">
+              <img class="card-img-top" src="{{photo.thumb}}">
             </a>
 
             <!-- Display attributes such as image name, year, price, etc.. -->
@@ -167,7 +176,7 @@
     <section class="default" id="default">
       <div class="container">
         <div class="section-heading text-center">
-          <h2>default</h2>
+          <h2></h2>
           <hr>
         </div>
       </div>
