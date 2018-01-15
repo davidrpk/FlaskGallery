@@ -56,7 +56,7 @@
           <br>
           <h5>Store the data for your photos in the JSON file <code>'../data/data.json'</code></h5>
           <br>
-          <h5>The best part about loading images dynamically is they are still responsive, all you need to do is define the column (width) for all photos to take. In the gallery example below, we list smaller size thumbnail images in the gallery and render the full size image in the dynamically rendered webpage.</h5>
+          <h5>Define the column width in the Jinja for loop for the photos in the gallery to use. In the example below we display thumbnail images in the gallery. When a visitor clicks on one of these images, the <code>templates/object.html</code> webpage is dynamically rendered - refrencing the records ID code to display the full resolution image and its attributes.</h5>
           <br>
           <h5>You can view or fork the source code on <a href="https://github.com/JimiPedros/FlaskGallery" style="color:#3535b2">Github.</a></h5>
           <br>
@@ -79,7 +79,7 @@
             <br>
             <li><h5>Firstly, we need to store our images in an Amazon Web Services S3 Bucket (You can also store images in the local directory, all you need to do is copy the url into the JSON file).</h5></li>
             <br>
-            <li><h5>We can update the JSON file to contain different attributes related to each photo.</h5></li>
+            <li><h5>You can update the JSON file to contain different attributes related to each photo.</h5></li>
           </ul>
         </div>
 
@@ -115,12 +115,12 @@
         <div class="col-lg-6 col-md-12 sm-12">
 
           <pre><code>
-                &#123;% for photo in photos %&#125;
-                  &lt;img src="&#123;{photo.thumb}&#125;" /&gt;
-                  &lt;h4>&#123;{photo.title}&#125;&lt;/h4&gt;
-                  &lt;p>&#123;{photo.year}&#125;&lt;/p&gt;
-                &#123;% endfor %&#125;
-              </code></pre>
+            &#123;% for photo in photos %&#125;
+              &lt;img src="&#123;{photo.thumb}&#125;" /&gt;
+              &lt;h4>&#123;{photo.title}&#125;&lt;/h4&gt;
+              &lt;p>&#123;{photo.year}&#125;&lt;/p&gt;
+            &#123;% endfor %&#125;
+          </code></pre>
         </div>
 
       </div><!-- end card -->
@@ -214,7 +214,7 @@
 
     <footer>
       <div class="container">
-        <p>&copy; 2018 Flask Gallery by James Peters</p>
+        <p>&copy; 2018 Flask Gallery by <a href="https://jamespeters.cc/">James Peters</a></p>
       </div>
     </footer>
 
