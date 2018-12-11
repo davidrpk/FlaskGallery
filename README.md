@@ -54,3 +54,6 @@ You can access this information using for each photo by using a for loop in Jinj
 
 
 ###### Donate Bitcoin: 1CUz6mRsZTp3cK55bhQF5kJiUtBWqjB9ML 
+
+
+###### note: this site will no longer be hosted in 2019 due to expenses 
