@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Flask Gallery Developed by James Peters in 2018. Follow me on Twitter @JamesPeters_NZ">
-    <meta name="author" content="James Peters">
-    <meta name="keywords" content="Flask, Gallery, Photos, Photo-gallery, python, web development, design, gallery, website design">
+    <meta name="description" content="Flask Gallery">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
     <meta name="robots" content="all">
     <meta name="googlebot" content="all">
 
@@ -32,104 +32,6 @@
       <a class="navbar-brand" href="#page-top">Flask Gallery</a>
     </div>
   </nav>
-
-  <section class="cta">
-    <div class="cta-content">
-      <div class="container">
-        <h2 style="text-align:center">Flask Gallery</h2>
-        <h5 class="landing-sub" style="text-align:center">Dynamically load images into your Flask website, beautifully</h5>
-      </div>
-    </div>
-    <div class="overlay"></div>
-  </section>
-
-  <section class="default" id="introduction">
-    <div class="container">
-      <div class="section-heading text-center">
-        <h3>Introduction</h3>
-        <hr>
-      </div>
-    </div>
-
-    <div class="container" style="padding-top:50px;">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 sm-12">
-          <h5>Welcome to Flask Gallery (MIT License). This framework has been developed to make uploading new photos as easy as possible without comprimising the design of the website.</h5>
-          <br>
-          <h5>Store the data for your photos in the JSON file <code>'../data/data.json'</code></h5>
-          <br>
-          <h5>Define the column width in the Jinja for loop for the photos in the gallery to use. In the example below we display thumbnail images in the gallery. When a visitor clicks on one of these images, the <code>templates/object.html</code> webpage is dynamically rendered - refrencing the records ID code to display the full resolution image and its attributes.</h5>
-          <br>
-          <h5>You can view or fork the source code on <a href="https://github.com/JimiPedros/FlaskGallery" style="color:#3535b2">Github.</a></h5>
-          <br>
-        </div>
-      </div><!-- end card -->
-    </div>
-  </section>
-
-  <section class="default" id="getting-started">
-    <div class="container">
-      <div class="section-heading text-center">
-        <h3>Getting Started</h3>
-        <hr>
-      </div>
-    </div>
-    <div class="container" style="padding-top:50px;">
-      <div class="row text-left">
-        <div class="col-lg-6 col-md-12 sm-12">
-          <ul style="list-style-type: none;">
-            <br>
-            <li><h5>Firstly, we need to store our images in an Amazon Web Services S3 Bucket (You can also store images in the local directory, all you need to do is copy the url into the JSON file).</h5></li>
-            <br>
-            <li><h5>You can update the JSON file to contain different attributes related to each photo.</h5></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-6 col-md-12 sm-12">
-
-          <pre><code>
-            {
-              "objectID": "AA01",
-              "imageUrl": "https://...",
-              "thumbNail": "https:/...",
-              "title": "Image A",
-              "desc": "This is a photograph",
-              "date": "5/10/2012"
-            }
-          </code></pre>
-        </div>
-
-      </div><!-- end card -->
-    </div><!-- end container -->
-
-    <div class="container" style="padding-top:50px;">
-      <div class="row text-left">
-        <div class="col-lg-6 col-md-12 sm-12">
-          <ul style="list-style-type: none;">
-            <li>
-              <h5>The 'read_photos()' function in our app file reads the data from this JSON file and passes it to the webpage requested.</h5></li>
-            <br>
-            <li>
-              <h5>You can access this information using for each photo by using a for loop in Jinja.</h5></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-6 col-md-12 sm-12">
-
-          <pre><code>
-            &#123;% for photo in photos %&#125;
-              &lt;img src="&#123;{photo.thumb}&#125;" /&gt;
-              &lt;h4>&#123;{photo.title}&#125;&lt;/h4&gt;
-              &lt;p>&#123;{photo.year}&#125;&lt;/p&gt;
-            &#123;% endfor %&#125;
-          </code></pre>
-        </div>
-
-      </div><!-- end card -->
-    </div><!-- end container -->
-
-  </section>
-
 
   <section class="default" id="gallery">
     <div class="container">
@@ -174,49 +76,9 @@
 
   </section>
 
-    <section class="default" id="default">
-      <div class="container">
-        <div class="section-heading text-center">
-          <h2></h2>
-          <hr>
-        </div>
-      </div>
-      <div class="container" style="padding-top:50px;">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h6 class="text-muted">
-              Donate <i class="fa fa-bitcoin"></i> 1CUz6mRsZTp3cK55bhQF5kJiUtBWqjB9ML
-            </h6>
-          </div>
-        </div>
-        <br><br>
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="list-inline list-social">
-              <li class="list-inline-item social-twitter">
-                <a href="https://www.twitter.com/JamesPeters_NZ">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item social-github">
-                <a href="https://github.com/JimiPedros/FlaskGallery#fork-destination-box">
-                  <i class="fa fa-code-fork"></i>
-                </a>
-              </li>
-              <li class="list-inline-item social-google-plus">
-                <a href="mailto:jamescpeters@outlook.com">
-                  <i class="fa fa-envelope-o"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <footer>
       <div class="container">
-        <p>&copy; 2018 Flask Gallery by <a href="https://jamespeters.cc/">James Peters</a></p>
+        <p></p>
       </div>
     </footer>
 
