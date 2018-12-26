@@ -1,14 +1,8 @@
 # Flask Gallery
-###### The easiest way to dynamically load images into your flask web application 
-###### https://flaskgallery.com/
-
 
 #### Getting Started
 
-
-Firstly, we need to store our images in an Amazon Web Services S3 Bucket (You can also store images in the local directory, all you need to do is copy the url into the JSON file).
-
-We can update the JSON file to contain different attributes related to each photo.
+data.json contains the index for all the photos. The JSON structure is as follows:
 
 `{
               "objectID": "AA01",
@@ -32,28 +26,3 @@ You can access this information using for each photo by using a for loop in Jinj
                 {% endfor %}`
             
 
-
-
-
-
-#### Tasks
-
-[x] Reading data from s3 bucket
-
-[x] Basic dynamic routing
-
-[ ] Upload to s3 bucket
-
-[ ] Manage photos in a bucket (edit attributes, delete)
-
-[ ] Password secure login to upload photos
-
-
-##### Developers - please fork and make a pull request, include comments in your work so people can understand your code
-
-
-
-###### Donate Bitcoin: 1CUz6mRsZTp3cK55bhQF5kJiUtBWqjB9ML 
-
-
-###### note: this site will no longer be hosted in 2019 due to expenses 
