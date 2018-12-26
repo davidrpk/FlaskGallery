@@ -1,6 +1,6 @@
 # Flask Gallery
 
-#### Getting Started
+## Getting Started
 
 data.json contains the index for all the photos. The JSON structure is as follows:
 
@@ -25,4 +25,17 @@ You can access this information using for each photo by using a for loop in Jinj
                   <p>{{photo.year}}</p>
                 {% endfor %}`
             
+## Running
 
+Windows:
+```
+set FLASK_APP=flaskgallery.webapp
+set FLASK_ENV=development
+flask run
+````
+Unix/Mac:
+```
+export FLASK_APP=flaskgallery.webapp
+export FLASK_ENV=development
+flask run
+```
