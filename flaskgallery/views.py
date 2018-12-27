@@ -11,11 +11,7 @@ def index():
 
 @app.route('/collection/<objectID>')
 def collectionItem(objectID):
-
-    data = photoindex.fetchall()
-
-    for record in data:
-        if str(record['objectID']) == str(objectID):
-            return render_template('object.html', photo=record)
-
+    record = photoindex.fetchone(objectID)
+    if record != None:
+        return render_template('object.html', photo=record)
     return render_template('index.html')
