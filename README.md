@@ -2,11 +2,11 @@
 
 ## Getting Started
 
-data.json contains the index for all the photos. The JSON structure is as follows:
+The photo index can be stored in a json file, an sqlite db or extended for your own db type. The default is to use the sqlite db. The record structure is as follows:
 
 ```json
 {
-  "objectID": "AA01",
+  "objectID": "1",
   "imageUrl": "https://...",
   "thumbNail": "https:/...",
   "title": "Image A",
@@ -14,8 +14,6 @@ data.json contains the index for all the photos. The JSON structure is as follow
   "date": "5/10/2012"
 }
 ```           
-The 'read_photos()' function in our app file reads the data from this JSON file and passes it to the webpage requested.
-
 You can access this information using for each photo by using a for loop in Jinja.
 
 ```html
