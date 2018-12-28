@@ -14,8 +14,13 @@ class PhotoIndex:
 
 
 class SQLitePhotoIndex:
+    _dblocation = ''
+
+    def __init__(self, dblocation):
+        self._dblocation = dblocation
+
     def fetchall(self):
-        db = sqlite3.connect('data/data.db')
+        db = sqlite3.connect(self._dblocation)
         db.row_factory = sqlite3.Row
         c = db.cursor()
         c.execute('''SELECT * FROM photos''')
@@ -46,8 +51,13 @@ class SQLitePhotoIndex:
 
 
 class JSONPhotoIndex:
+    _dblocation = ''
+
+    def __init__(self, dblocation):
+        self._dblocation = dblocation
+    
     def fetchall(self):
-        with open('data/data.json', 'r') as file:
+        with open(self._dblocation, 'r') as file:
             data = json.load(file)
         return data
 

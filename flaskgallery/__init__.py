@@ -6,4 +6,4 @@ app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET',
                            'OnceUponATimeThereWasAWickedWitchCalledNodeJS')
 
-photoindex = SQLitePhotoIndex()
+photoindex = SQLitePhotoIndex('data/data.db')
