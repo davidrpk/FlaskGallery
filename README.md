@@ -6,7 +6,7 @@ The photo index can be stored in a json file, an sqlite db or extended for your 
 
 ```json
 {
-  "objectID": "1",
+  "objectID": 1,
   "imageUrl": "https://...",
   "thumbNail": "https:/...",
   "title": "Image A",

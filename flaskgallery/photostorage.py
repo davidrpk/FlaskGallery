@@ -26,7 +26,12 @@ class SQLitePhotoIndex:
         db = sqlite3.connect('data/data.db')
         db.row_factory = sqlite3.Row
         c = db.cursor()
-        c.execute('''SELECT * FROM photos WHERE objectID=?''',(objectID,))
+        intObjectID = 0
+        try:
+            intObjectID = int(objectID)
+        except:
+            return None
+        c.execute('''SELECT * FROM photos WHERE objectID=?''',(intObjectID,))
         row = c.fetchone()
         if row != None:
             photo = dict(zip(row.keys(), row))
