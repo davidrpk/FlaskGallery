@@ -9,6 +9,8 @@ def sqlite_connection():
     # TODO: setup test instance of db then destory after
     dbname = 'data/test_data.db'
 
+    # TODO: check if db does not exist before continuing
+
     db = sqlite3.connect(dbname)
     sql_create_photos_table = """ CREATE TABLE IF NOT EXISTS `photos` (
                                         `objectID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,

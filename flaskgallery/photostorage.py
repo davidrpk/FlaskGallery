@@ -12,6 +12,9 @@ class PhotoIndex:
     def fetchone(self, objectID):
         raise NotImplementedError()
 
+    def addone(self, photo):
+        raise NotImplementedError()
+
 
 class SQLitePhotoIndex:
     _dblocation = ''
@@ -47,7 +50,27 @@ class SQLitePhotoIndex:
             photo = dict(zip(row.keys(), row))
             return photo
 
-        return None
+    def addone(self, photo):
+        db = sqlite3.connect(self._dblocation)
+        c = db.cursor()
+
+        sql = """ INSERT INTO `photos` (
+                        `url`,
+                        `thumb`,
+                        `title`,
+                        `desc`)
+                    VALUES (
+                        ?,
+                        ?,
+                        ?,
+                        ?
+                    ); """
+
+        print(photo.values())
+        c.execute(sql, tuple(photo.values()))
+        db.commit()
+        objectID = c.lastrowid
+        return objectID
 
 
 class JSONPhotoIndex:
@@ -55,7 +78,7 @@ class JSONPhotoIndex:
 
     def __init__(self, dblocation):
         self._dblocation = dblocation
-    
+
     def fetchall(self):
         with open(self._dblocation, 'r') as file:
             data = json.load(file)
@@ -66,3 +89,6 @@ class JSONPhotoIndex:
             if str(record['objectID']) == str(objectID):
                 return record
         return None
+
+    def addone(self, photo):
+        raise NotImplementedError()
