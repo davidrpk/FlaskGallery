@@ -33,7 +33,7 @@ class SQLitePhotoIndex:
         return photos
 
     def fetchone(self, objectID):
-        db = sqlite3.connect('data/data.db')
+        db = sqlite3.connect(self._dblocation)
         db.row_factory = sqlite3.Row
         c = db.cursor()
         intObjectID = 0
