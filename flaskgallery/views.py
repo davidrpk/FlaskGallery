@@ -3,6 +3,7 @@ from . import app
 from . import photoindex
 import json
 
+
 @app.route('/')
 def index():
     photos = photoindex.fetchall()
@@ -20,8 +21,9 @@ def collectionItem(objectID):
 @app.route('/api/v1.0/collection/photos', methods=['POST'])
 def add_photo():
     data = request.get_json()
-    if not data or 'url' not in data['photo']:
-        abort(400)
-    objectID = photoindex.addone(data['photo'])
-    record = photoindex.fetchone(objectID)
-    return jsonify(record), 201
+    if not data:
+        for record in data:
+            if 'url' not in record['photo']:
+                abort(400)
+            photoindex.addone(record['photo'])
+    return "{}", 201
