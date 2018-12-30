@@ -21,7 +21,7 @@ def collectionItem(objectID):
 @app.route('/api/v1.0/collection/photos', methods=['POST'])
 def add_photo():
     data = request.get_json()
-    if not data:
+    if data is not None:
         for record in data:
             if 'url' not in record['photo']:
                 abort(400)
