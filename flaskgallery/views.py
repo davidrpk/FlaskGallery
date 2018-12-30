@@ -1,18 +1,18 @@
 from flask import Flask, render_template, request, abort, jsonify
 from . import app
-from . import photoindex
+from . import photocollection
 import json
 
 
 @app.route('/')
 def index():
-    photos = photoindex.fetchall()
+    photos = photocollection.fetchall()
     return render_template('index.html', photos=photos)
 
 
 @app.route('/collection/<objectID>')
 def collectionItem(objectID):
-    record = photoindex.fetchone(objectID)
+    record = photocollection.fetchone(objectID)
     if record is not None:
         return render_template('object.html', photo=record)
     return render_template('index.html')
@@ -25,5 +25,5 @@ def add_photo():
         for record in data:
             if 'url' not in record['photo']:
                 abort(400)
-            photoindex.addone(record['photo'])
+            photocollection.addone(record['photo'])
     return "{}", 201

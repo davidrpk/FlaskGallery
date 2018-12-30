@@ -1,22 +1,7 @@
 import sqlite3
-import json
 
 
-class PhotoIndex:
-    def __init__(self):
-        print('')
-
-    def fetchall(self):
-        raise NotImplementedError()
-
-    def fetchone(self, objectID):
-        raise NotImplementedError()
-
-    def addone(self, photo):
-        raise NotImplementedError()
-
-
-class SQLitePhotoIndex:
+class PhotoCollectionSQLite:
     _dblocation = ''
 
     def __init__(self, dblocation):
@@ -71,24 +56,3 @@ class SQLitePhotoIndex:
         db.commit()
         objectID = c.lastrowid
         return objectID
-
-
-class JSONPhotoIndex:
-    _dblocation = ''
-
-    def __init__(self, dblocation):
-        self._dblocation = dblocation
-
-    def fetchall(self):
-        with open(self._dblocation, 'r') as file:
-            data = json.load(file)
-        return data
-
-    def fetchone(self, objectID):
-        for record in self.fetchall():
-            if str(record['objectID']) == str(objectID):
-                return record
-        return None
-
-    def addone(self, photo):
-        raise NotImplementedError()
