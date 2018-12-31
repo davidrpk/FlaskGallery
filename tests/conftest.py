@@ -1,5 +1,4 @@
 import pytest
-from flaskgallery.photostorage import SQLitePhotoIndex, JSONPhotoIndex
 import sqlite3
 import os
 
