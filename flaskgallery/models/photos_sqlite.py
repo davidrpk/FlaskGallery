@@ -1,6 +1,7 @@
 import sqlite3
 import uuid
 
+
 class PhotoCollectionSQLite:
     _dblocation = ''
 
