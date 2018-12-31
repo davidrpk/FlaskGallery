@@ -1,5 +1,5 @@
 import sqlite3
-
+import uuid
 
 class PhotoCollectionSQLite:
     _dblocation = ''
@@ -24,12 +24,8 @@ class PhotoCollectionSQLite:
         db = sqlite3.connect(self._dblocation)
         db.row_factory = sqlite3.Row
         c = db.cursor()
-        intObjectID = 0
-        try:
-            intObjectID = int(objectID)
-        except ValueError:
-            return None
-        c.execute('''SELECT * FROM photos WHERE objectID=?''', (intObjectID,))
+        # TODO: sanitize objectID input
+        c.execute("""SELECT * FROM photos WHERE objectID=?""", (objectID,))
         row = c.fetchone()
         if row is not None:
             photo = dict(zip(row.keys(), row))
@@ -38,21 +34,33 @@ class PhotoCollectionSQLite:
     def addone(self, photo):
         db = sqlite3.connect(self._dblocation)
         c = db.cursor()
-
+        objectID = str(uuid.uuid4())
         sql = """ INSERT INTO `photos` (
+                        `objectID`,
                         `url`,
                         `thumb`,
                         `title`,
-                        `desc`)
+                        `desc`,
+                        `taken`,
+                        `CRC`)
                     VALUES (
+                        ?,
+                        ?,
+                        ?,
                         ?,
                         ?,
                         ?,
                         ?
                     ); """
 
-        print(photo.values())
-        c.execute(sql, tuple(photo.values()))
+        c.execute(sql, (
+            objectID,
+            photo['url'],
+            photo['thumb'],
+            photo['title'],
+            photo['desc'],
+            photo['taken'],
+            photo['CRC']
+        ))
         db.commit()
-        objectID = c.lastrowid
         return objectID

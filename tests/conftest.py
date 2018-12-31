@@ -12,22 +12,31 @@ def sqlite_connection():
 
     db = sqlite3.connect(dbname)
     sql_create_photos_table = """ CREATE TABLE IF NOT EXISTS `photos` (
-                                        `objectID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+                                        `objectID` TEXT NOT NULL UNIQUE,
                                         `url` TEXT,
                                         `thumb` TEXT,
                                         `title` TEXT,
-                                        `desc` TEXT
+                                        `desc` TEXT,
+                                        `taken` TEXT,
+                                        `CRC` TEXT,
+                                        PRIMARY KEY(`objectID`)
                                     ); """
     sql_create_photo_record = """ INSERT INTO `photos` (
+                                        `objectID`,
                                         `url`,
                                         `thumb`,
                                         `title`,
-                                        `desc`)
+                                        `desc`,
+                                        `taken`,
+                                        `CRC`)
                                     VALUES (
+                                        "96de6a68-4fc2-411c-91a3-52ae37879481",
                                         "https://s3-ap-southeast-2.amazonaws.com/flaskgallery-photos/600.png",
                                         "https://s3-ap-southeast-2.amazonaws.com/flaskgallery-photos/300.png",
                                         "Photo #1",
-                                        "This is a description of the photograph"
+                                        "This is a description of the photograph",
+                                        "2018-01-01",
+                                        "0x784DD132"
                                     ); """
     
     c = db.cursor()

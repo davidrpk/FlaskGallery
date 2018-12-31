@@ -15,7 +15,9 @@ def test_sqlite_add_one(sqlite_connection):
     photo = {"url": "https://s3-ap-southeast-2.amazonaws.com/flaskgallery-photos/600.png",
              "thumb": "https://s3-ap-southeast-2.amazonaws.com/flaskgallery-photos/300.png",
              "title": "Photo #3",
-             "desc": "This is a description of the photograph"}
+             "desc": "This is a description of the photograph",
+             "taken": "2018-01-01",
+             "CRC": "0x7ED2A35C"}
     objectID = db.addone(photo)
     photo['objectID'] = objectID
     # TODO: remove dependency on fetchone to catch regressions effecting both
