@@ -7,8 +7,8 @@ The photo index can be stored in a json file, an sqlite db, Azure table storage 
 ```json
 {
   "objectID": "1",
-  "imageUrl": "https://...",
-  "thumbNail": "https:/...",
+  "url": "https://...",
+  "thumb": "https:/...",
   "title": "Image A",
   "desc": "This is a photograph",
   "taken": "2018-01-01",
