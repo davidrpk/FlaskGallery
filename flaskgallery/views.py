@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, abort, jsonify
 from . import app
 from . import photocollection
-import json
 
 
 @app.route('/')
@@ -27,3 +26,10 @@ def add_photo():
                 abort(400)
             photocollection.addone(record['photo'])
     return "{}", 201
+
+
+@app.route('/api/v1.0/collection/photos', methods=['GET'])
+def get_photo():
+    objectID = request.args.get('objectid')
+    photos = photocollection.fetchone(objectID)
+    return jsonify(photos), 200
