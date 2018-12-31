@@ -9,7 +9,7 @@ def index():
     return render_template('index.html', photos=photos)
 
 
-@app.route('/collection/<objectID>')
+@app.route('/collection/photos/<objectID>')
 def collectionItem(objectID):
     record = photocollection.fetchone(objectID)
     if record is not None:
@@ -28,8 +28,7 @@ def add_photo():
     return "{}", 201
 
 
-@app.route('/api/v1.0/collection/photos', methods=['GET'])
-def get_photo():
-    objectID = request.args.get('objectid')
+@app.route('/api/v1.0/collection/photos/<objectID>', methods=['GET'])
+def get_photo(objectID):
     photos = photocollection.fetchone(objectID)
     return jsonify(photos), 200
