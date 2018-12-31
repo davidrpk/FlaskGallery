@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-The photo index can be stored in a json file, an sqlite db or extended for your own db type. The default is to use the sqlite db. The record structure is as follows:
+The photo index can be stored in a json file, an sqlite db, Azure table storage or extended for your own db type. The default is to use the sqlite db. The record structure is as follows:
 
 ```json
 {
@@ -11,7 +11,8 @@ The photo index can be stored in a json file, an sqlite db or extended for your 
   "thumbNail": "https:/...",
   "title": "Image A",
   "desc": "This is a photograph",
-  "date": "5/10/2012"
+  "taken": "2018-01-01",
+  "CRC": "0x7ED2A35C"
 }
 ```           
 You can access this information using for each photo by using a for loop in Jinja.

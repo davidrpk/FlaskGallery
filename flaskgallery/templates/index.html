@@ -50,7 +50,7 @@
         <div class="col-lg-4 col-md-6 sm-4">
           <div class="card">
 
-            <a href="/collection/{{photo.objectID}}" class="card-view">
+            <a href="/collection/photos/{{photo.objectID}}" class="card-view">
             <!-- click on this image and flask will dynamically route page -->
               <img class="card-img-top" src="{{photo.thumb}}">
             </a>
@@ -63,7 +63,7 @@
 
             <!-- click on this link in the card footer and flask will dynamically route page -->
             <div class="card-footer">
-              <a href="/collection/{{photo.objectID}}" class="card-view">View Info</a>
+              <a href="/collection/photos/{{photo.objectID}}" class="card-view">View Info</a>
             </div>
 
           </div><!-- end card -->
