@@ -1,6 +1,7 @@
 from azure.cosmosdb.table.tableservice import TableService
 from azure.cosmosdb.table.models import Entity
 from .photocollection import Photo
+import uuid
 
 
 class PhotoCollectionAzureTable:
@@ -31,5 +32,6 @@ class PhotoCollectionAzureTable:
         table_service = TableService(connection_string=self._connectionstring)
         photoAzure = photo
         photoAzure['PartitionKey'] = photo['taken']
-        photoAzure['RowKey'] = photo['objectID']
+        photoAzure['RowKey'] = str(uuid.uuid4())
+        photoAzure['objectID'] = photoAzure['RowKey']
         table_service.insert_entity('phototable', photoAzure)
